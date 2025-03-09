@@ -1,3 +1,5 @@
+import { BrowserRouter } from "react-router-dom";
+
 import { Route, Routes } from "react-router-dom"
 import ForgotPassword from "./views/ForgotPassword"
 import Home from "./views/Home"
@@ -29,6 +31,7 @@ import RedirectIfAuthenticate from "./components/RedirectIfAuthenticate"
 function App() {
 
   return (
+    <BrowserRouter basename="/EroxShoppingWebsite">
     <Routes>
 
       <Route path={RoutePaths.home} element={<Home />}></Route>
@@ -73,6 +76,8 @@ function App() {
       <Route path="*" element={<PageNotFound />}></Route>
 
     </Routes>
+
+    </BrowserRouter>
     
   )
 }
