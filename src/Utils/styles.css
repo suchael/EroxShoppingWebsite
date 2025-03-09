@@ -1,0 +1,72 @@
+:root {
+    --primary-color: black; /* Black base */
+    --secondary-color: #f4e6b5; /* Vibrant gold for accents */
+    --background-color: #1f1f1f; /* Dark gray background */
+    --text-color: #e0e0e0; /* Light gray for text */
+    --input-bg: #2d2d2d; /* Slightly lighter gray for inputs */
+    --shadow-color: rgba(0, 0, 0, 0.25);
+    --transition-duration: 0.3s;
+  }
+  
+  /* Navbar Styles */
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary-color) !important; /* Uses primary color */
+  }
+  
+  /* General Text Colors */
+  .text-white {
+    color: white !important;
+  }
+  
+  .text-black {
+    color: var(--primary-color) !important;
+  }
+  
+  .main-text-col {
+    color: var(--text-color) !important; /* Uses text color variable */
+  }
+  
+  /* Background Colors */
+  .bg-black {
+    background-color: var(--primary-color) !important;
+  }
+  
+  .bg-primary {
+    background-color: var(--secondary-color) !important;
+  }
+  
+  /* Button and Link Hover Effects */
+  .fd-hover-bg-primary:hover {
+    background-color: var(--secondary-color) !important; /* Uses secondary color */
+  }
+  
+  .fd-hover-color-primary:hover {
+    color: var(--secondary-color) !important;
+  }
+  
+  /* Input Styles */
+  .input-field {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--secondary-color);
+    padding: 10px;
+    transition: border-color var(--transition-duration);
+  }
+  
+  .input-field:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+  
+  /* Box Shadow */
+  .shadow-effect {
+    box-shadow: 0px 4px 6px var(--shadow-color);
+    transition: box-shadow var(--transition-duration);
+  }
+  
+  .shadow-effect:hover {
+    box-shadow: 0px 6px 10px var(--shadow-color);
+  }
+  

@@ -61,6 +61,7 @@ function App() {
       {/* ADMINS ROUTES */}
 
       <Route element={<PrivateRoute type={1} />} >
+      </Route>
         <Route path={RoutePaths.admin} element={<AdminPanel  currentComponent={<DashMain />} />}></Route>
         <Route path={RoutePaths.adminProducts} element={<AdminPanel  currentComponent={<ProductMain />} />}></Route>
         <Route path={RoutePaths.adminSlides} element={<AdminPanel  currentComponent={<SlidesMain />} />}></Route>
@@ -68,7 +69,6 @@ function App() {
         <Route path={RoutePaths.adminBlog} element={<AdminPanel  currentComponent={<BlogMain />} />}></Route>
         <Route path={RoutePaths.adminCustomers} element={<AdminPanel  currentComponent={<CustomersMain />} />}></Route>
         <Route path={RoutePaths.adminAccount} element={<AdminPanel  currentComponent={<AdminAccount />} />}></Route>
-      </Route>
 
       <Route path="*" element={<PageNotFound />}></Route>
 
