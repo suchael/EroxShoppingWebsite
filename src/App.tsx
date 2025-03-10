@@ -31,7 +31,7 @@ import RedirectIfAuthenticate from "./components/RedirectIfAuthenticate"
 function App() {
 
   return (
-    <BrowserRouter basename="/EroxShoppingWebsite">
+    
     <Routes>
 
       <Route path={RoutePaths.home} element={<Home />}></Route>
@@ -76,8 +76,6 @@ function App() {
       <Route path="*" element={<PageNotFound />}></Route>
 
     </Routes>
-
-    </BrowserRouter>
     
   )
 }
