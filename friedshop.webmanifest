@@ -1,7 +1,7 @@
 {
-    "name": "FriedShop",
-    "short_name": "FriedShop",
-    "description": "Faite facilement vos achats en ligne en toute sécurité.",
+    "name": "Erox-emporium",
+    "short_name": "Erox-emporium",
+    "description": "An e commerce website for buying and selling",
     "icons":[
         {
             "src":"/android-chrome-192x192.png",
