@@ -1,6 +1,6 @@
 {
-  "name": "erox-emporium",
   "homepage": "https://suchael.github.io/EroxShoppingWebsite/",
+  "name": "erox-emporium",
   "private": true,
   "version": "1.0.0",
   "type": "module",
