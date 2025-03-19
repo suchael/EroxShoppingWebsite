@@ -13,11 +13,13 @@ import { Provider } from 'react-redux';
 import {store} from '../store';
 import ScrollToTop from './components/ScrollToTop';
 
+export const basename = "/EroxShoppingWebsite/"; // Set your GitHub repo name
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-          <ScrollToTop />
+    <BrowserRouter basename={basename}>
+    <ScrollToTop />
           <App />
         </BrowserRouter>
     </Provider>
