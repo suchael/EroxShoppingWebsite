@@ -2,9 +2,46 @@ import React from 'react'
 import { useGetStartisticsQuery } from '../../store/apiquery/usersApiSlice'
 import Spinner from '../Spinner';
 
+
+interface StatisticsData {
+    products: number;
+    categories: number;
+    customers: number;
+    slides: number;
+    admins: number;
+  }
+  
+  interface StatisticsResponse {
+    message: string;
+    data: StatisticsData;
+  }
+  
+  const statistics: StatisticsResponse = {
+    message: "Startistic",
+    data: {
+      products: 8,
+      categories: 3,
+      customers: 222,
+      slides: 3,
+      admins: 2,
+    },
+  };
+  
+  console.log(statistics);
+  
+
 const DashMain = () => {
 
-    const { data: starts, isLoading } = useGetStartisticsQuery('api/users');
+    const { 
+        // data: statistics, 
+        // isLoading
+     } = useGetStartisticsQuery('api/users');
+     const isLoading = false;
+
+    // console.log("data: ", statistics)
+    // console.log("isLoading: ", isLoading)
+
+
 
     const format = (nb : number |string, lenght : number = 2) => {
         const value = nb.toString();
@@ -18,23 +55,23 @@ const DashMain = () => {
                 !isLoading ?
                     <div className="resume d-grid grid-4 gap-3 fw-bold mt-3">
                         <div className="r-card d-flex justify-content-center gap-3 border border-1 bg-secondary p-3">
-                            <h1>{format(starts.data.products)}</h1>
+                            <h1>{format(statistics.data.products)}</h1>
                             <h4 className='align-self-center'>Total Products</h4>
                         </div>
                         <div className="r-card d-flex justify-content-center gap-3 border border-1 bg-secondary p-3">
-                            <h1>{format(starts.data.customers)}</h1>
+                            <h1>{format(statistics.data.customers)}</h1>
                             <h4 className='align-self-center'>Total Customers</h4>
                         </div>
                         <div className="r-card d-flex justify-content-center gap-3 border border-1 bg-secondary p-3">
-                            <h1>{format(starts.data.products)}</h1>
+                            <h1>{format(statistics.data.products)}</h1>
                             <h4 className='align-self-center'>Popular Products</h4>
                         </div>
                         <div className="r-card d-flex justify-content-center gap-3 border border-1 bg-secondary p-3">
-                            <h1>{format(starts.data.categories)}</h1>
+                            <h1>{format(statistics.data.categories)}</h1>
                             <h4 className='align-self-center'>Categories</h4>
                         </div>
                         <div className="r-card d-flex justify-content-center gap-3 border border-1 bg-secondary p-3">
-                            <h1>{format(starts.data.slides)}</h1>
+                            <h1>{format(statistics.data.slides)}</h1>
                             <h4 className='align-self-center'>SLIDES</h4>
                         </div>
                         <div className="r-card d-flex justify-content-center gap-3 border border-1 bg-secondary p-3">
@@ -42,11 +79,11 @@ const DashMain = () => {
                             <h4 className='align-self-center'>Total Posts</h4>
                         </div>
                         <div className="r-card d-flex justify-content-center gap-3 border border-1 bg-secondary p-3">
-                            <h1>{format(starts.data.admins)}</h1>
+                            <h1>{format(statistics.data.admins)}</h1>
                             <h4 className='align-self-center'>Admins</h4>
                         </div>
                         <div className="r-card d-flex justify-content-center gap-3 border border-1 bg-secondary p-3">
-                            <h1>{format(starts.data.categories)}</h1>
+                            <h1>{format(statistics.data.categories)}</h1>
                             <h4 className='align-self-center'>Categories</h4>
                         </div>
                     </div> :

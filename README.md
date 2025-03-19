@@ -1,8 +1,7 @@
 # FriedShop : A e-commerce website built with ReactJS
 
 ### Description
-
-This project is a front-end web application for a fictional fast-food restaurant called Friedshop, developed with ReactJS. It allows users to browse the menu, place orders, and track their status. The application is live at [https://friedshop.vercel.app/](https://friedshop.vercel.app/).
+This is an ecommerce website 
 
 ### Features
 
@@ -33,12 +32,6 @@ This project is under the MIT license.
 * This project is still under development.
 * Feel free to contribute by opening issues or pull requests.
 
-### Useful links
-
-* GitHub repository: [https://github.com/v1p3r75/friedshop-front-react](https://github.com/v1p3r75/friedshop-front-react)
-* Live application: [https://friedshop.vercel.app/](https://friedshop.vercel.app/)
-* ReactJS documentation: [https://react.dev/](https://react.dev/)
-* Redux tutorial: [https://redux.js.org/tutorials/fundamentals/part-1-overview](https://redux.js.org/tutorials/fundamentals/part-1-overview)
 
 ## Possible improvements
 

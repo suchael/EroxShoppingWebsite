@@ -28,7 +28,7 @@ import "../../Utils/styles.css";
 const navsBar = [
   { path: RoutePaths.home, name: "Home" },
   { path: RoutePaths.shop, name: "Shop" },
-  { path: RoutePaths.blog, name: "Blog" },
+  // { path: RoutePaths.blog, name: "Blog" },
   { path: RoutePaths.contact, name: "Contact US" },
   { path: RoutePaths.team, name: "Teams" },
 ];

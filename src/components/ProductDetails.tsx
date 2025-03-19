@@ -17,10 +17,11 @@ const ProductDetails = ({product} : {product : ProductType}) => {
             <div className='p-img col-12 col-lg-6'>
                 <div className="product-img col-9 h-25">
                     <Carousel showArrows={false} showIndicators={false} swipeable={true}>
-                        <div className="others-img"><img src={link(product.img)} alt="Alt" /></div>
-                        <div className="others-img"><img src={link(product.img)} alt="Alt" /></div>
-                        <div className="others-img"><img src={link(product.img)} alt="Alt" /></div>
-                        <div className="others-img"><img src={link(product.img)} alt="Alt" /></div>
+                        <div className="others-img"><img src={product.img} alt="Alt" /></div>
+                        <div className="others-img"><img src={product.img} alt="Alt" /></div>
+                        <div className="others-img"><img src={product.img} alt="Alt" /></div>
+                        <div className="others-img"><img src={product.img} alt="Alt" /></div>
+                    
                     </Carousel>
                 </div>
             </div>

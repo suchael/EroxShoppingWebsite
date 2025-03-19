@@ -118,8 +118,60 @@ const ListOfCategories = ({ setCategory, setPage }: { setCategory: Function, set
     setCategory(category);
     setPage('add');
   }
-  const { isLoading, data: categoryList, isSuccess, isError } = useGetAllCategoriesQuery('api/categories');
+
+
+  interface Category {
+    id: number;
+    name: string;
+    desc: string;
+    created_at: string;
+    updated_at: string;
+  }
+  
+  interface CategoryResponse {
+    message: string;
+    data: Category[];
+  }
+  
+  const categoryList: CategoryResponse = {
+    message: "List of categories",
+    data: [
+      {
+        id: 2,
+        name: "Oils And Vegetals",
+        desc: "Desc",
+        created_at: "2023-05-06T08:34:53.000000Z",
+        updated_at: "2023-05-06T08:34:53.000000Z",
+      },
+      {
+        id: 3,
+        name: "Fruits",
+        desc: "desc",
+        created_at: "2023-05-07T12:59:19.000000Z",
+        updated_at: "2023-05-07T12:59:19.000000Z",
+      },
+      {
+        id: 4,
+        name: "Fresh",
+        desc: "Mp",
+        created_at: "2023-05-30T11:37:34.000000Z",
+        updated_at: "2023-10-04T15:38:33.000000Z",
+      },
+    ],
+  };
+  
+  const isLoading = false;
+  const isSuccess = true;
+  const isError = false;
+  
+  const { 
+    // isLoading, 
+    // data: categoryList, 
+    // isSuccess, 
+    // isError
+   } = useGetAllCategoriesQuery('api/categories');
   const [deleteCategory, deletedResult] = useDeleteCategoryMutation();
+  // console.log("categoryList: ",categoryList)
 
   const deleteItem = (id: number) => {
     Swal.fire({
@@ -165,7 +217,7 @@ const ListOfCategories = ({ setCategory, setPage }: { setCategory: Function, set
       <table className="table table-default text-center table-bordered">
         <thead>
           <tr className='fd-bg-primary text-white'>
-            <th scope="col" className='p-3'>N°</th>
+            <th scope="col" className='p-3'>NUM</th>
             <th scope="col" className='p-3'>NAME</th>
             <th scope="col" className='p-3'>DESCRIPTION</th>
             <th scope="col" className='p-3'>ACTION</th>

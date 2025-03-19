@@ -31,7 +31,6 @@ import RedirectIfAuthenticate from "./components/RedirectIfAuthenticate"
 function App() {
 
   return (
-    
     <Routes>
 
       <Route path={RoutePaths.home} element={<Home />}></Route>

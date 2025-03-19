@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import Spinner from '../Spinner';
 import { HandleResult } from '../HandleResult';
 import { useGetAllCategoriesQuery } from '../../store/apiquery/categoryApiSlice';
-import { CategoryType } from '../../views/VirtualData';
+import { CategoryType, data_productList } from '../../views/VirtualData';
 
 let imageIsChanged = false;
 
@@ -225,9 +225,20 @@ const AddOrEditProduct = ({ product }: { product: null | ProductType }) => {
 
 const ListOfProducts = ({ setProduct, setPage }: { setProduct: Function, setPage: Function }) => {
 
-	const { isLoading, data: productsList, isSuccess, isError } = useGetAllProductsQuery('api/products');
-	const [deleteProduct, deletedResult] = useDeleteProductMutation();
+	const { 
+		// isLoading, 
+		// data: productsList, 
+		// isSuccess, 
+		// isError 
+	} = useGetAllProductsQuery('api/products');
 
+		const productsList = data_productList;
+		const isLoading = false;
+		const isSuccess = true;
+		const isError = false;
+
+	const [deleteProduct, deletedResult] = useDeleteProductMutation();
+// console.log("productsList: ", productsList)
 	const parseProduct = (product: ProductType) => {
 		setProduct(product);
 		setPage('add');
@@ -258,7 +269,7 @@ const ListOfProducts = ({ setProduct, setPage }: { setProduct: Function, setPage
 
 				return (
 					<tr className="p-3" key={product.id}>
-						<td scope="row w-25"><img src={link(product.img)} alt={product.name} style={{ width: '50px', height: '50px' }} /></td>
+						<td scope="row w-25"><img src={product.img} alt={product.name} style={{ width: '50px', height: '50px' }} /></td>
 						<td className='fw-bold'>{product.name}</td>
 						<td>{product.price}</td>
 						<td>{product.total_quantity}</td>

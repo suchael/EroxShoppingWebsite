@@ -7,8 +7,54 @@ const ListOfCustomers = () => {
 
   let count = 0;
 
-  const { isLoading, data: customersList, isSuccess, isError } = useGetAllUsersQuery('api/users');
+  const { 
+    // isLoading, 
+    // data: customersList, 
+    // isSuccess, 
+    // isError
+   } = useGetAllUsersQuery('api/users');
+
+   const isLoading = false;
+   const isSuccess = true;
+   const isError = false;
+
+   interface Customer {
+    id: number;
+    firstname: string;
+    lastname: string;
+    email: string;
+    address: string;
+  }
+  
+  interface CustomerResponse {
+    message: string;
+    data: Customer[];
+  }
+
+  const customersList: CustomerResponse = {
+    message: "List of customers",
+    data: [
+      {
+        id: 1,
+        firstname: "John",
+        lastname: "Doe",
+        email: "johndoe@example.com",
+        address: "123 Main St, Lagos",
+      },
+      {
+        id: 2,
+        firstname: "Alex",
+        lastname: "Smith",
+        email: "janesmith@example.com",
+        address: "456 Elm St, Abuja",
+      },
+    ],
+  };
+  
+
   const [deleteCustomer, deletedResult] = useDeleteUserMutation();
+
+  console.log("customersList: ",customersList)
 
   const deleteItem = (id: number) => {
     Swal.fire({
@@ -61,7 +107,7 @@ const ListOfCustomers = () => {
         <table className="table table-default text-center table-bordered">
           <thead>
             <tr className='fd-bg-primary text-white'>
-              <th scope="col" className='p-3'>N°</th>
+              <th scope="col" className='p-3'>NUM</th>
               <th scope="col" className='p-3'>FIRSTNAME</th>
               <th scope="col" className='p-3'>LASTNAME</th>
               <th scope="col" className='p-3'>EMAIL</th>

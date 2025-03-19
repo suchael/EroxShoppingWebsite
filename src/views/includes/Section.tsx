@@ -5,7 +5,7 @@ import ProductSort from "../../components/ProductSort";
 import ProductOfDay from "../../components/ProductOfDay";
 import Blog from "../../components/Blog";
 import Testimonial from "../../components/Testimonial";
-import { CategoryType, blogInfo, testimonialInfo } from "../VirtualData";
+import { CategoryType, blogInfo, data_productList, testimonialInfo } from "../VirtualData";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../../hooks/redux-hooks";
 import {
@@ -66,7 +66,15 @@ const AllCategory = () => {
           ))}
         </div>
       ) : (
-        <Spinner />
+        // <Spinner />
+        <div className="category-list d-flex flex-column gap-4 py-2 px-3">
+        {/* {
+        categoryList['data'].map((category: CategoryType) => <Category category={category} arrow='right' key={category.id} />)
+      } */}
+        {categoryList.map((category) => (
+          <Category category={category} arrow="right" key={category.id} />
+        ))}
+      </div>
       )}
     </div>
   );
@@ -233,17 +241,22 @@ const PopularProducts = ({
   } = useGetAllProductsQuery("api/products");
 
   // const productsList : ProductType[] = useAppSelector((state) => state.products);
+  // console.log("productsList: ",productsList)
 
   let content: React.ReactNode;
 
-  content =
-    isLoading || isError ? (
-      <Spinner />
-    ) : isSuccess ? (
-      productsList["data"].map((product: ProductType) => (
-        <ProductCart {...product} type={type} key={product.id} />
-      ))
-    ) : null;
+  // content =
+  //   isLoading || isError ? (
+  //     <Spinner />
+  //   ) : isSuccess ? (
+  //     productsList["data"].map((product: ProductType) => (
+  //       <ProductCart {...product} type={type} key={product.id} />
+  //     ))
+  //   ) : null;
+
+    content = data_productList.data.map((product: ProductType) => (
+      <ProductCart {...product} type={type} key={product.id} />
+    ))
 
   return (
     <div
@@ -257,11 +270,20 @@ const PopularProducts = ({
 };
 
 const SortProducts = () => {
-  const { data: products, isLoading, isError } = useGetBestProductsQuery("");
+  const { 
+    // data: products, 
+    isLoading, 
+    isError
+   } = useGetBestProductsQuery("");
+
+   const products = data_productList
+
+      // console.log("MyProducts: ", products)
+
 
   return (
     <>
-      {!isLoading && !isError ? (
+      {/* {!isLoading && !isError ? (
         <div>
           {products.data.map((product: { products: ProductType }) => (
             <ProductSort {...product.products} key={product.products.id} />
@@ -269,7 +291,14 @@ const SortProducts = () => {
         </div>
       ) : (
         <Spinner />
-      )}
+      )} */}
+
+<div>
+{products.data.slice(0, 4).map((product: ProductType) => (
+    <ProductSort {...product} key={product.id} />
+  ))}
+</div>
+
     </>
   );
 };
@@ -405,7 +434,7 @@ const Section = () => {
           </div>
         </div>
         <MakeCall />
-        <div className="blog-news text-black px-3 px-lg-5 my-5">
+        {/* <div className="blog-news text-black px-3 px-lg-5 my-5">
           <div className="d-flex flex-wrap justify-content-between mb-5">
             <h4>Latest Blog & News</h4>
             <div>
@@ -415,7 +444,7 @@ const Section = () => {
             </div>
           </div>
           <BlogAndNews />
-        </div>
+        </div> */}
         <div className="testimonials text-black px-3 px-lg-5 my-5">
           <div className="d-flex flex-wrap justify-content-between">
             <h4>Our Awesome Testimonial</h4>

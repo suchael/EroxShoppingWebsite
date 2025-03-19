@@ -1,3 +1,5 @@
+import { ProductType } from "../components/ProductCart";
+
  
  export type CategoryType = {
     id: string | number,
@@ -21,9 +23,9 @@
   ];
   
   export const blogInfo = [
-    {blod_id: 1, date : '21 Dec 2023', img : '/img/blog/1.jpg', title : 'How to manage your e-commerce shopify account ?', content : "Lorem ipsum dolor sit amet consectetur adipisicing elit ...", authorName : 'Elfried KIDJE', authorImg : '/img/author.jpg'},
-    {blod_id: 2, date : '21 Dec 2023', img : '/img/blog/2.jpg', title : 'How to manage your e-commerce shopify account ?', content : "Lorem ipsum dolor sit amet consectetur adipisicing elit ...", authorName : 'Elfried KIDJE', authorImg : '/img/author.jpg'},
-    {blod_id: 3, date : '21 Dec 2023', img : '/img/blog/3.jpg', title : 'How to manage your e-commerce shopify account ?', content : "Lorem ipsum dolor sit amet consectetur adipisicing elit ...", authorName : 'Elfried KIDJE', authorImg : '/img/author.jpg'}
+    {blod_id: 1, date : '10 Mar 2025', img : '/img/blog/1.jpg', title : 'How to manage your e-commerce shopify account ?', content : "Lorem ipsum dolor sit amet consectetur adipisicing elit ...", authorName : 'Elfried KIDJE', authorImg : '/img/author.jpg'},
+    {blod_id: 2, date : '18 Feb 2025', img : '/img/blog/2.jpg', title : 'How to manage your e-commerce shopify account ?', content : "Lorem ipsum dolor sit amet consectetur adipisicing elit ...", authorName : 'Elfried KIDJE', authorImg : '/img/author.jpg'},
+    {blod_id: 3, date : '21 Jan 2025', img : '/img/blog/3.jpg', title : 'How to manage your e-commerce shopify account ?', content : "Lorem ipsum dolor sit amet consectetur adipisicing elit ...", authorName : 'Elfried KIDJE', authorImg : '/img/author.jpg'}
   
   ];
   
@@ -122,3 +124,134 @@
     {lastname : 'John', firstname : 'Doe', email : 'john@doe.com', address : '123 Main Street'},
     {lastname : 'John', firstname : 'Doe', email : 'john@doe.com', address : '123 Main Street'},
   ]
+
+
+
+
+
+
+  
+  export type ProductList = {
+    message: string;
+    data: ProductType[];
+  };
+  
+ export const data_productList: ProductList = {
+    message: "List of products",
+    data: [
+      {
+        id: 2,
+        name: "Product Name 1",
+        img: "https://www.100daysofrealfood.com/wp-content/uploads/2023/09/shutterstock_301752452-800x659.jpg",
+        price: 123,
+        old_price: 200,
+        reviews: 5,
+        desc: "desc",
+        reduction: 0,
+        created_at: "2023-05-07T12:48:52.000000Z",
+        updated_at: "2023-05-07T12:59:32.000000Z",
+        total_quantity: 99,
+        categorie_id: 3
+      },
+      {
+        id: 3,
+        name: "Product Name 5",
+        img: "https://cdn.pixabay.com/photo/2017/05/07/19/32/strawberry-2293337_640.jpg",
+        price: 200,
+        old_price: 230,
+        reviews: 5,
+        desc: "Desc",
+        reduction: 0,
+        created_at: "2023-05-22T15:37:12.000000Z",
+        updated_at: "2023-05-22T15:37:12.000000Z",
+        total_quantity: 120,
+        categorie_id: 2
+      },
+      {
+        id: 4,
+        name: "Product Name 4",
+        img: "https://images.pexels.com/photos/1313267/pexels-photo-1313267.jpeg?cs=srgb&dl=pexels-brian-van-den-heuvel-339534-1313267.jpg&fm=jpg",
+        price: 150,
+        old_price: 200,
+        reviews: 5,
+        desc: "Desc",
+        reduction: 0,
+        created_at: "2023-05-30T11:27:14.000000Z",
+        updated_at: "2023-05-30T11:27:14.000000Z",
+        total_quantity: 145,
+        categorie_id: 3
+      },
+      {
+        id: 5,
+        name: "Product Name 6",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Orange-Fruit-Pieces.jpg/2560px-Orange-Fruit-Pieces.jpg",
+        price: 200,
+        old_price: 250,
+        reviews: 5,
+        desc: "lorem",
+        reduction: 0,
+        created_at: "2023-05-30T11:37:19.000000Z",
+        updated_at: "2023-05-30T11:37:19.000000Z",
+        total_quantity: 100,
+        categorie_id: 3
+      },
+      {
+        id: 6,
+        name: "Product Name",
+        img: "https://img.freepik.com/free-photo/high-angle-tasty-fruits-arrangement_23-2148545917.jpg?semt=ais_hybrid",
+        price: 200,
+        old_price: 250,
+        reviews: 5,
+        desc: "Product description",
+        reduction: 0,
+        created_at: "2023-07-27T08:51:23.000000Z",
+        updated_at: "2023-07-27T08:51:23.000000Z",
+        total_quantity: 100,
+        categorie_id: 2
+      },
+      {
+        id: 7,
+        name: "Product Name",
+        img: "https://247foods.ng/storage/2025/03/Avocado-Fruit-One-Piece.jpg",
+        price: 200,
+        old_price: 250,
+        reviews: 5,
+        desc: "Product description",
+        reduction: 0,
+        created_at: "2023-07-27T08:51:58.000000Z",
+        updated_at: "2023-07-27T08:51:58.000000Z",
+        total_quantity: 100,
+        categorie_id: 2
+      },
+      {
+        id: 8,
+        name: "Product Name",
+        img: "https://img.freepik.com/free-photo/strawberry-berry-levitating-white-background_485709-57.jpg",
+        price: 200,
+        old_price: 250,
+        reviews: 5,
+        desc: "Product description",
+        reduction: 0,
+        created_at: "2023-07-27T08:52:16.000000Z",
+        updated_at: "2023-07-27T08:52:16.000000Z",
+        total_quantity: 100,
+        categorie_id: 2
+      },
+      {
+        id: 9,
+        name: "Product Name",
+        img: "https://guardian.ng/wp-content/uploads/2022/01/Soursop-fruits-e1643024964180.jpg",
+        price: 200,
+        old_price: 250,
+        reviews: 5,
+        desc: "Product description ipsum",
+        reduction: 0,
+        created_at: "2023-07-27T08:52:53.000000Z",
+        updated_at: "2023-10-04T15:39:01.000000Z",
+        total_quantity: 100,
+        categorie_id: 2
+      }
+    ]
+  };
+  
+  
